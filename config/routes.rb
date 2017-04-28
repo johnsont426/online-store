@@ -12,6 +12,11 @@ Rails.application.routes.draw do
   resources :items
 
   devise_for :users
+
+  resources :categories, only: [:show] do
+    resources :items, only: [:show]
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
