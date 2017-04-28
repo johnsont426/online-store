@@ -11,10 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170428050535) do
+ActiveRecord::Schema.define(version: 20170428234543) do
 
   create_table "carts", force: :cascade do |t|
     t.integer "user_id"
+    t.integer "order_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -37,7 +38,8 @@ ActiveRecord::Schema.define(version: 20170428050535) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer "user_id"
+    t.integer  "user_id"
+    t.datetime "order_time"
   end
 
   create_table "users", force: :cascade do |t|

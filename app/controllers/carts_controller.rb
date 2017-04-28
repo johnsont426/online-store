@@ -3,13 +3,12 @@ class CartsController < ApplicationController
   	@cart = Cart.find(params[:id])
   end
 
-  private
-
   def checkout
   	cart = Cart.find(params[:id])
   	cart.checkout
-  	cart.new_order
+  	order = cart.new_order
 		current_user.current_cart = nil
-		redirect_to cart_path
+		current_user.save
+		redirect_to order_path(order)
   end
 end

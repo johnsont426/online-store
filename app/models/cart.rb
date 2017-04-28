@@ -28,7 +28,8 @@ class Cart < ActiveRecord::Base
 	end
 
 	def new_order
-		self.build_order(order_time: Time.now)
+		order = self.build_order(order_time: Time.now)
 		self.save
+		order
 	end
 end

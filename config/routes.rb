@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :orders, only: [:show]
 
   resources :carts, only: [:show]
+  post 'carts/checkout' => 'carts#checkout', as: :checkout
 
   resources :categories, only: [:index]
 

@@ -1,2 +1,8 @@
-<h1>Carts#show</h1>
-<p>Find me in app/views/carts/show.html.erb</p>
+<h1>Your Cart</h1>
+<ul>
+	<% @cart.line_items.each do |line_item| %>
+		<li><%= line_item.item.name %>: <%= line_item.quantity %></li>
+	<% end %>
+</ul>
+<br>
+<%= button_to "Checkout", checkout_path(id: @cart.id) %>
