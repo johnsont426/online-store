@@ -7,14 +7,12 @@ Rails.application.routes.draw do
 
   get 'categories/index'
 
-  get 'categories/show'
-
   resources :items
 
   devise_for :users
 
   resources :categories, only: [:show] do
-    resources :items, only: [:show]
+    resources :items, only: [:index, :show]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

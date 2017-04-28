@@ -1,7 +1,0 @@
-<h1><%= @category.name %></h1>
-<% @category.items each do |item| %>
-	<div class="item-block">
-		<img src="<%= item.image_url %>" alt="picture of <%= item.name %>">
-		<%= link_to "#{item.name}", category_item_path(@category.id, item.id)%>
-	</div>
-<% end %>

@@ -1,0 +1,7 @@
+<% if @category %>
+	<h1><%= @category.name %></h1>
+<% end %>
+
+<% @category.items each do |item| %>
+	<%= render 'item_block' %>
+<% end %>

@@ -1,0 +1,5 @@
+<h1><%= @item.name %></h1>
+<img src="<%= @item.image_url %>" alt="picture of <%= @item.name %>">
+<p><%= @item.description %></p>
+<h4><%= @item.inventory %> left</h4>
+<h4><%= number_to_currency(@item.price) %></h4>
