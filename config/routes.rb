@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'store#home', as: 'home'
+
   get 'orders/show'
 
   get 'carts/show'
