@@ -1,7 +1,8 @@
 class ItemsController < ApplicationController
 	def index
 		if params[:category_id]
-      @items = Category.find(params[:category_id]).items
+			@category = Category.find(params[:category_id])
+      @items = @category.items
     else
       @items = Item.all
     end
@@ -13,6 +14,7 @@ class ItemsController < ApplicationController
 
 	def create
 		item = Item.create(item_params)
+		redirect_to item_path(item)
 	end
 
 	def show
@@ -20,12 +22,18 @@ class ItemsController < ApplicationController
 	end
 
 	def edit
+		@item = Item.find(params[:id])
 	end
 
 	def update
+		@item = Item.find(params[:id])
+		@item.update(item_params)
+		redirect_to item_path(@item)
 	end
 
 	def destroy
+		@item = Item.find(params[:id])
+		redirect_to items_path
 	end
 
 	private

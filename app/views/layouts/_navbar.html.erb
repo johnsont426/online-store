@@ -5,7 +5,7 @@
     </div>
     <% if current_user %>
       <ul class="nav navbar-nav navbar-right">
-        <% if current_user.current_bag %>
+        <% if current_user.current_cart %>
           <li> <%= link_to "Cart", cart_path(current_user.current_cart) %></li>
         <% end %>
         <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>

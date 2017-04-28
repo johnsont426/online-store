@@ -2,6 +2,6 @@
 	<h1><%= @category.name %></h1>
 <% end %>
 
-<% @category.items each do |item| %>
-	<%= render 'item_block' %>
+<% @items.each do |item| %>
+	<%= render partial: "items/item_block", locals: {item: item} %>
 <% end %>

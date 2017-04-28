@@ -1,3 +1,4 @@
+<p>Back to <%= link_to "#{@item.category.name}", category_items_path(@item.category.id) %>
 <h1><%= @item.name %></h1>
 <img src="<%= @item.image_url %>" alt="picture of <%= @item.name %>">
 <p><%= @item.description %></p>

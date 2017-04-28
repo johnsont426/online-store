@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   root 'store#home', as: 'home'
 
-  get 'orders/show'
+  resources :orders, only: [:show]
 
-  get 'carts/show'
+  resources :carts, only: [:show]
 
-  get 'categories/index'
+  resources :categories, only: [:index]
 
   resources :items
 
