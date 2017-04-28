@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   resources :items
 
+  resources :line_items, only: [:create]
+
   devise_for :users
 
   resources :categories, only: [:show] do

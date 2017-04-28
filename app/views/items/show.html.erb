@@ -4,3 +4,5 @@
 <p><%= @item.description %></p>
 <h4><%= @item.inventory %> left</h4>
 <h4><%= number_to_currency(@item.price) %></h4>
+
+<%= button_to 'Add to Cart', line_items_path(item_id: @item.id) unless current_user.nil? %>
