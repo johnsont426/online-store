@@ -1,0 +1,5 @@
+<ul>
+	<% @orders.each do |order| %>
+		<li><%= link_to "Order ##{order.id}", order_path(order) unless order.processed %></li>
+	<% end %>
+</ul>

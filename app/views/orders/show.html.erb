@@ -1,2 +1,7 @@
 <h1>Order #<%= @order.id %></h1>
 <h5>Time ordered: <%= @order.order_time %></h5>
+<ul>
+	<% @order.line_items.each do |line_item| %>
+		<li><%= link_to "#{line_item.item.name}, item_path(line_item.item)" %> | Quantity: <%= line_item.quantity %></li>
+	<% end %>
+</ul>
