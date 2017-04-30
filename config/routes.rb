@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   resources :line_items, only: [:create]
 
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
 
   resources :categories, only: [:show] do
     resources :items, only: [:index, :show]
