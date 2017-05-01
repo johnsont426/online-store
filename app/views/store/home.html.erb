@@ -1,0 +1,6 @@
+<h1>New!!</h1>
+<div class="row">
+	<% Item.new_products.each do |item| %>
+		<%= render partial: "items/item_block", locals: {item: item} %>
+	<% end %>
+</div>

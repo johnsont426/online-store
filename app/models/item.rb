@@ -11,4 +11,7 @@ class Item < ActiveRecord::Base
 	validates :price, presence: true, numericality: { greater_than: 0 }
 	validates :inventory, presence: true, numericality: { only_integer: true, greater_than: 0 }
 
+	def self.new_products
+		self.all.last(6)
+	end
 end

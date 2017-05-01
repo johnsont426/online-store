@@ -18,3 +18,10 @@
   background-color: red;
   display: table;
 }
+
+.item-block {
+	border: 2px solid black;
+	box-sizing: border-box;
+	height: 30vh;
+	margin: 20px 4.1%;
+}
