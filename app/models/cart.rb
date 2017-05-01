@@ -3,6 +3,7 @@ class Cart < ActiveRecord::Base
 	has_many :items, through: :line_items
 	belongs_to :user
 	belongs_to :order
+	# has_one :user, foreign_key: :current_cart_id
 
 	def total
 		self.line_items.collect{|line_item| line_item.item.price*line_item.quantity}.sum

@@ -26,8 +26,7 @@ Devise.setup do |config|
   # available as additional gems.
   require 'devise/orm/active_record'
 
-  config.omniauth :facebook, "407935209577704", "9d538813afa8484d0ae69efec706c8eb",
-                callback_url: "https://localhost:3000/auth/facebook/callback"
+  config.omniauth :facebook, "1318766188200145", "ad3c05ddd82b5ae309fc06ee1a235879"
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is

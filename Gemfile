@@ -28,6 +28,8 @@ gem 'devise'
 gem 'pundit'
 
 gem 'omniauth-facebook'
+
+gem 'omniauth'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

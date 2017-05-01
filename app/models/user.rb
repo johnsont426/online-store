@@ -5,7 +5,9 @@ class User < ActiveRecord::Base
          # :recoverable, :rememberable, :trackable, :validatable
 
   has_many :carts
+  has_many :orders
 	belongs_to :current_cart, class_name: "Cart"
+
 	enum role: [:normal, :admin]
 
 	def self.from_omniauth(auth)
