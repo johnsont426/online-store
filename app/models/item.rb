@@ -4,4 +4,11 @@ class Item < ActiveRecord::Base
 	belongs_to :category
 
 	accepts_nested_attributes_for :category
+
+	validates :name, presence: true, uniqueness: true
+	validates :description, presence: true
+	validates :image_url, presence: true
+	validates :price, presence: true, numericality: { greater_than: 0 }
+	validates :inventory, presence: true, numericality: { only_integer: true, greater_than: 0 }
+
 end

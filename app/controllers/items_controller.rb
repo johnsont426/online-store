@@ -15,8 +15,11 @@ class ItemsController < ApplicationController
 
 	def create
 		@item = Item.create(item_params)
-		authorize @item
-		redirect_to item_path(item)
+		if @item.valid?
+			redirect_to item_path(@item)
+		else
+			render "items/new"
+		end
 	end
 
 	def show
@@ -30,9 +33,12 @@ class ItemsController < ApplicationController
 
 	def update
 		@item = Item.find(params[:id])
-		authorize @item
-		@item.update(item_params)
-		redirect_to item_path(@item)
+		if @item.valid?
+			@item.update(item_params)
+			redirect_to item_path(@item)
+		else
+			render "items/edit"
+		end
 	end
 
 	def destroy
