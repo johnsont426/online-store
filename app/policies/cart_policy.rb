@@ -1,5 +1,5 @@
 class CartPolicy < ApplicationPolicy
 	def show?
-		user.admin? || record.try(:user) == user
+		user.try(:admin?) || record.try(:user) == user
 	end
 end

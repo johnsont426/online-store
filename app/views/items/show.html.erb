@@ -1,8 +1,42 @@
-<p>Back to <%= link_to "#{@item.category.name}", category_items_path(@item.category.id) %>
-<h1><%= @item.name %></h1>
-<img src="<%= @item.image_url %>" alt="picture of <%= @item.name %>">
-<p><%= @item.description %></p>
-<h4><%= @item.inventory %> left</h4>
-<h4><%= number_to_currency(@item.price) %></h4>
+<div>
+	<p>Back to <%= link_to "#{@item.category.name}", category_items_path(@item.category.id) %>
+</div>
 
-<%= button_to 'Add to Cart', line_items_path(item_id: @item.id) unless current_user.nil? %>
+<div class="row">
+	<div class="col-md-1">
+	</div>
+	<div class="col-md-11 item-headline">
+		<h1><%= @item.name %></h1>
+		<br>
+		<% if current_user.try(:admin?) %>
+			<%= link_to "Edit Item", edit_item_path(@item) %>
+		<% end %>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-1">
+		
+	</div>
+
+	<div class="col-md-4">
+		<img src="<%= @item.image_url %>" alt="picture of <%= @item.name %>">
+	</div>
+	<div class="col-md-6 right">
+		<p><%= @item.description %></p>
+		<% if @item.in_stock? %>
+			<h4><%= @item.inventory %> left</h4>
+		<% else %>
+			<h4>Out of Stock</h4>
+		<% end %>
+		<h4><%= number_to_currency(@item.price) %></h4>
+		<br>
+		<% if @item.in_stock? %>
+			<%= button_to 'Add to Cart', line_items_path(item_id: @item.id), class: "btn btn-primary" unless current_user.nil? %>
+		<% end %>
+	</div>
+	<div class="col-md-1">
+		
+	</div>
+
+</div>

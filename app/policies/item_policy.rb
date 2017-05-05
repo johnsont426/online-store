@@ -1,17 +1,17 @@
 class ItemPolicy < ApplicationPolicy
 	def new?
-		user.admin?
+		user.try(:admin?)
 	end
 	def create?
-		user.admin?
+		user.try(:admin?)
 	end
 	def edit?
-		user.admin?
+		user.try(:admin?)
 	end
 	def update?
-		user.admin?
+		user.try(:admin?)
 	end
 	def destroy?
-		user.admin?
+		user.try(:admin?)
 	end
 end

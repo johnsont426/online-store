@@ -44,6 +44,7 @@ class ItemsController < ApplicationController
 	def destroy
 		@item = Item.find(params[:id])
 		authorize @item
+		@item.delete
 		redirect_to items_path
 	end
 

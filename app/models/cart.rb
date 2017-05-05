@@ -3,7 +3,6 @@ class Cart < ActiveRecord::Base
 	has_many :items, through: :line_items
 	belongs_to :user
 	belongs_to :order
-	# has_one :user, foreign_key: :current_cart_id
 
 	def total
 		self.line_items.collect{|line_item| line_item.item.price*line_item.quantity}.sum
@@ -22,9 +21,9 @@ class Cart < ActiveRecord::Base
 	end
 
 	def checkout
-		self.items.each do |item|
-			item.inventory -= self.line_items.find_by(item_id: item.id).quantity
-			item.save
+		self.line_items.each do |line_item|
+			line_item.item.inventory -= line_item.quantity
+			line_item.item.save
 		end
 	end
 

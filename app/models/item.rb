@@ -9,9 +9,14 @@ class Item < ActiveRecord::Base
 	validates :description, presence: true
 	validates :image_url, presence: true
 	validates :price, presence: true, numericality: { greater_than: 0 }
-	validates :inventory, presence: true, numericality: { only_integer: true, greater_than: 0 }
+	validates :inventory, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
 	def self.new_products
 		self.all.last(6)
 	end
+
+	def in_stock?
+		self.inventory > 0
+	end
+			
 end

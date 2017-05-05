@@ -1,4 +1,5 @@
-<div class="item-block col-md-3">
+<div class="item-block col-md-2">
 	<img src="<%= item.image_url %>" alt="picture of <%= item.name %>">
+	<br>
 	<%= link_to "#{item.name}", category_item_path(item.category.id, item.id)%>
 </div>

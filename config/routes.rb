@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'store#home', as: 'home'
 
-  resources :orders, only: [:show]
+  resources :orders, only: [:show, :index]
 
   resources :carts, only: [:show]
   post 'carts/checkout' => 'carts#checkout', as: :checkout

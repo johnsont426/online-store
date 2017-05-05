@@ -1,3 +1,7 @@
 <h1>Edit Item</h1>
 <%= render 'errors' %>
+<div>
+	<%= button_to "Delete Item", item_path(@item), method: :delete %>
+</div>
+<br>
 <%= render 'form' %>
