@@ -12,7 +12,11 @@ class Item < ActiveRecord::Base
 	validates :inventory, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
 	def self.new_products
-		self.all.last(6)
+		self.all.last(4)
+	end
+
+	def self.featured_products
+		self.all.sample(8)
 	end
 
 	def in_stock?

@@ -22,12 +22,11 @@
 
 .item-block {
 	text-align: center;
-	/*width: 250px;*/
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); 
 	box-sizing: border-box;
-	margin: 10px 4.1%;
+	margin: 20px 4.1%;
 	padding: 0 0 20px 0;
-	height: 35vh;
+	height: 42vh;
 }
 
 h1, h2, h3, h4, h5 {
@@ -41,11 +40,6 @@ h1, h2, h3, h4, h5 {
 
 .right {
 	text-align: right;
-}
-
-img {
-	width: 100%;
-	margin-bottom: 15px
 }
 
 .main-headline {

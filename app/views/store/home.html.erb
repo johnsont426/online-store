@@ -1,6 +1,13 @@
-<h1 class="main-headline">New Products</h1>
 <div class="row">
+	<h1 class="main-headline">NEW PRODUCTS</h1>
 	<% Item.new_products.each do |item| %>
+		<%= render partial: "items/item_block", locals: {item: item} %>
+	<% end %>
+</div>
+
+<div class="row">
+	<h1 class="main-headline">FEATURED PRODUCTS</h1>
+	<% Item.featured_products.each do |item| %>
 		<%= render partial: "items/item_block", locals: {item: item} %>
 	<% end %>
 </div>
