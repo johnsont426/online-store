@@ -5,9 +5,11 @@ class Item < ActiveRecord::Base
 
 	accepts_nested_attributes_for :category
 
+	has_attached_file :image
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
+
 	validates :name, presence: true, uniqueness: true
 	validates :description, presence: true
-	validates :image_url, presence: true
 	validates :price, presence: true, numericality: { greater_than: 0 }
 	validates :inventory, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
