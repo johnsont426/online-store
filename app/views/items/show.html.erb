@@ -23,17 +23,13 @@
 		<%= image_tag @item.image.url, class: "img-responsive" %>
 	</div>
 	<div class="col-md-6 right">
-		<p><%= @item.description %></p>
-		<% if @item.in_stock? %>
-			<h4><%= @item.inventory %> left</h4>
-		<% else %>
-			<h4>Out of Stock</h4>
-		<% end %>
-		<h4><%= number_to_currency(@item.price) %></h4>
-		<br>
-		<% if @item.in_stock? %>
-			<%= button_to 'Add to Cart', line_items_path(item_id: @item.id), class: "btn btn-primary" unless current_user.nil? %>
-		<% end %>
+		<ul class="nav nav-tabs nav-justified">
+			<li><a href="#" id="item-detail-button">Detail</a></li>
+			<li><a href="/items/<%= @item.id %>/reviews" id="item-reviews-button">Reviews</a></li>
+		</ul>
+		<div id="item-info">
+			<%= render 'detail' %>
+		</div>
 	</div>
 	<div class="col-md-1">
 		

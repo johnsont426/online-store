@@ -4,6 +4,7 @@ class CreateReviews < ActiveRecord::Migration[5.0]
       t.integer :star
       t.string :title
       t.string :content
+      t.integer :item_id
     end
   end
 end

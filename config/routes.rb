@@ -8,15 +8,21 @@ Rails.application.routes.draw do
 
   resources :categories, only: [:index]
 
-  resources :items
+  resources :items, only: [:index, :show, :new, :create, :edit, :update]
+
+  resources :items, only: [:show] do
+    resources :reviews, only: [:index, :create, :new]
+  end
 
   resources :line_items, only: [:create]
 
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
 
   resources :categories, only: [:show] do
-    resources :items, only: [:index, :show]
+    resources :items, only: [:index, :show] 
   end
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
