@@ -5,6 +5,7 @@
 <div class="row">
 	<div class="col-md-1">
 	</div>
+
 	<div class="col-md-11 item-headline">
 		<h1><%= @item.name %></h1>
 		<br>
@@ -16,12 +17,12 @@
 
 <div class="row">
 	<div class="col-md-1">
-		
 	</div>
 
 	<div class="col-md-4">
 		<%= image_tag @item.image.url, class: "img-responsive" %>
 	</div>
+
 	<div class="col-md-6 right">
 		<ul class="nav nav-tabs nav-justified">
 			<li><a href="#" id="item-detail-button">Detail</a></li>
@@ -31,8 +32,8 @@
 			<%= render 'detail' %>
 		</div>
 	</div>
+	
 	<div class="col-md-1">
-		
 	</div>
 
 </div>

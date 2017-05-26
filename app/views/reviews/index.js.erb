@@ -1,4 +1,13 @@
 var html = "<%=  j render 'reviews/review' %>"
 $("#item-info").html(html)
+$(function(){
+	$("#new-review").on("click", function(e){
+		$.ajax({
+			url: this.href,
+			dataType: 'script'
+		})
+		e.preventDefault()
+	})
+})
 
 

@@ -3,12 +3,15 @@ class ReviewsController < ApplicationController
 
 	def index
 		@reviews = @item.reviews
-		respond_to do |f|
-			f.js { render 'index.js', :layout => false} 
-		end
+	end
+
+	def new
+		@review = Review.new
+		render 'new.js', layout:false
 	end
 
 	def create
+		@review = @item.reviews.create(review_params)
 	end
 
 	def show
@@ -18,5 +21,9 @@ class ReviewsController < ApplicationController
 
 		def set_item
 			@item = Item.find(params[:item_id])
+		end
+
+		def review_params
+			params.require(:review).permit(:star, :title, :content)
 		end
 end
