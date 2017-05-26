@@ -1,2 +1,17 @@
-var html = "<%= j render 'form' %>"
-$("#item-info").append(html)
+var html = "<%= j render 'form' %>";
+var $div = $("#review-form-div");
+$div.html(html)
+
+
+$("#new_review").on("submit", function(e){
+	$.ajax({
+		url: this.action,
+		type: "POST",
+		data: $(this).serialize(),
+		success: function(response){
+			$("#reviews-div").append(response)
+			$div.html("")
+		}
+	});
+	e.preventDefault();
+})

@@ -1,8 +1,13 @@
-<% @reviews.each do |review|%>
-	<div>
-		<h2><em><%= review.star %> Star</em></h2>
-		<h2><%= review.title %></h2>
-		<p><%= review.content %></p>
-	</div>
-<% end %>
-<a href="/items/<%= @item.id %>/reviews/new" id="new-review">Write A Review</a>
+
+<div id="reviews-div">
+	<% @reviews.each do |review|%>
+		<div>
+			<h2><em><%= review.star %> Star</em></h2>
+			<h2><%= review.title %></h2>
+			<p><%= review.content %></p>
+		</div>
+	<% end %>
+</div>
+<div id="review-form-div">
+	<a href="/items/<%= @item.id %>/reviews/new" id="new-review-button">Write A Review</a>
+</div>

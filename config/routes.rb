@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     resources :reviews, only: [:index, :create, :new]
   end
 
+  resources :reviews, only: [:show]
+
   resources :line_items, only: [:create]
 
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }

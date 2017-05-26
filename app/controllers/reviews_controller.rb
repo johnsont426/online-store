@@ -3,15 +3,17 @@ class ReviewsController < ApplicationController
 
 	def index
 		@reviews = @item.reviews
+		render 'index.js', layout: false
 	end
 
 	def new
 		@review = Review.new
-		render 'new.js', layout:false
+		render 'new.js', layout: false
 	end
 
 	def create
 		@review = @item.reviews.create(review_params)
+		render 'reviews/show', layout: false
 	end
 
 	def show
