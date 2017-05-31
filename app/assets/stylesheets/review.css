@@ -4,11 +4,35 @@
   padding: 0 30px;
 }
 
-.review-div {
-
-}
-
 #detail-div {
 	margin-top: 30px;
 	padding: 0 30px;
 }
+
+/*#new_review {
+	margin-top: 30px;
+	padding: 0 30px;
+}
+*/
+/*.form-group {
+	text-align: left;
+}
+*/
+#review-form-div {
+	text-align: left;
+	margin-top: 30px;
+	padding: 0 30px;
+}
+
+/*#new-review-button:link, #new-review-button:visited {
+    background-color: #f44336;
+    color: white;
+    padding: 14px 25px;
+    text-align: center; 
+    text-decoration: none;
+    display: inline-block;
+}
+
+#new-review-button:hover, #new-review-button:active {
+    background-color: red;
+}*/
