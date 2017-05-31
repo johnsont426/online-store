@@ -1,13 +1,12 @@
 var html = "<%=  j render 'reviews/review' %>"
 $("#item-info").html(html)
-$(function(){
-	$("#new-review-button").on("click", function(e){
-		$.ajax({
-			url: this.href,
-			dataType: 'script'
-		})
-		e.preventDefault()
+$("#new-review-button").on("click", function(e){
+	$.ajax({
+		url: "/items/<%= @item.id %>/reviews",
+		dataType: 'script'
 	})
+	e.preventDefault()
 })
+
 
 

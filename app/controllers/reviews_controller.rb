@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
 
 	def index
 		@reviews = @item.reviews
-		render 'index.js', layout: false
+		render 'index.js'
 	end
 
 	def new
