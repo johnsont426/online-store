@@ -1,5 +1,5 @@
-<div class="item-block col-md-2">
-	<%= image_tag item.image.url, class: "img-responsive" %>
+<div class="item-block col-sm-2">
+	<%= link_to image_tag(item.image.url, class: "img-responsive"), category_item_path(item.category.id, item.id) %>
 	<br>
 	<%= link_to "#{item.name}", category_item_path(item.category.id, item.id)%>
 </div>
