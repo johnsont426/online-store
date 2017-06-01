@@ -9,7 +9,7 @@ $("#new_review").on("submit", function(e){
 		type: "POST",
 		data: $(this).serialize(),
 		success: function(response){
-			$("#reviews-div").append(response)
+			$("#reviews-div").prepend(response)
 			$div.html("")
 		}
 	});

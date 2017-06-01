@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" id="new-product-div">
 	<h1 class="main-headline">NEW PRODUCTS</h1>
 	<% Item.new_products.each do |item| %>
 		<%= render partial: "items/item_block", locals: {item: item} %>
