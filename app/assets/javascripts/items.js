@@ -11,8 +11,9 @@ function reviewButton(){
 
 function detailButton(){
 	$("#item-detail-button").on("click", function(e){
+		var itemId = $(this).attr("data-itemId")
 		$.ajax({
-			url: this.href,
+			url: "/items/" + itemId,
 			dataType: 'script'	
 		})
 		e.preventDefault();
