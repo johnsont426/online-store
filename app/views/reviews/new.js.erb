@@ -2,16 +2,44 @@ var html = "<%= j render 'form' %>";
 var $div = $("#review-form-div");
 $div.html(html)
 
+Handlebars.registerHelper('times', function(n, block) {
+    var accum = '';
+    for(var i = 0; i < n; ++i)
+        accum += block.fn(i);
+    return accum;
+});
 
-$("#new_review").on("submit", function(e){
+function Review(attributes){
+	this.star = attributes.star;
+	this.title = attributes.title;
+	this.content = attributes.content;
+}
+
+$(function(){
+	Review.templateSource = $("#review-template").html();
+	Review.template = Handlebars.compile(Review.templateSource);
+})
+
+Review.prototype.renderDiv = function(){
+	return Review.template(this)
+}
+
+Review.formSubmit = function(e){
 	$.ajax({
 		url: this.action,
 		type: "POST",
 		data: $(this).serialize(),
-		success: function(response){
-			$("#reviews-div").prepend(response)
-			$div.html("")
-		}
-	});
+		dataType: 'json',
+	})
+	.success(Review.success)
 	e.preventDefault();
-})
+}
+
+Review.success = function(json){
+	var review = new Review(json);
+	var reviewDiv = review.renderDiv();
+	$("#reviews-div").prepend(reviewDiv)
+	$div.html("")
+}
+
+$("#new_review").on("submit", Review.formSubmit)

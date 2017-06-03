@@ -13,10 +13,7 @@ class ReviewsController < ApplicationController
 
 	def create
 		@review = @item.reviews.create(review_params)
-		render 'reviews/show', layout: false
-	end
-
-	def show
+		render json:@review
 	end
 
 	private
