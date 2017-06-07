@@ -4,5 +4,7 @@
 		<li><%= line_item.item.name %>: <%= line_item.quantity %></li>
 	<% end %>
 </ul>
+<hr>
+<p><strong>Your Total: <%= number_to_currency(@cart.total) %></strong></p>
 <br>
 <%= button_to "Checkout", checkout_path(id: @cart.id) %>

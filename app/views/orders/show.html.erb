@@ -5,3 +5,6 @@
 		<li><%= link_to "#{line_item.item.name}", item_path(line_item.item) %> | Quantity: <%= line_item.quantity %></li>
 	<% end %>
 </ul>
+<hr>
+<p><strong>Total: <%= number_to_currency(@order.cart.total) %></strong></p>
+
