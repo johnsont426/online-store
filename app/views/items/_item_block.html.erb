@@ -1,5 +1,9 @@
 <div class="item-block col-sm-2">
-	<%= link_to image_tag(item.image.url, class: "img-responsive"), category_item_path(item.category.id, item.id) %>
+	<%= link_to image_tag(item.image.url, class: "item-block-img"), category_item_path(item.category.id, item.id) %>
 	<br>
-	<%= link_to "#{item.name}", category_item_path(item.category.id, item.id)%>
+	<div class="overlay">
+		<div class="item-link">
+			<%= link_to "#{item.name}", category_item_path(item.category.id, item.id)%>
+		</div>
+	</div>
 </div>
