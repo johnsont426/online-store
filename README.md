@@ -2,7 +2,7 @@
 
 ### Introduction
 
-This is a ecommerce site built with Rails, still in developing phase and will be online soon. 
+This is a ecommerce site built with Rails, still in developing phase and will be online soon. Watch my brief ![walkthrough video](https://youtu.be/CJ8D2alZJOk) of this project.  
 
 ### Usage
 
